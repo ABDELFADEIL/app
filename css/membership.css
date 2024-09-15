@@ -1,0 +1,124 @@
+
+
+/* تنسيق العناوين */
+.membership-container h1, 
+.membership-container h2, 
+.membership-container h3 {
+    color: #0056b3; /* اللون الأساسي للعناوين */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.membership-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px; /* مزيد من المسافة للعناوين الرئيسية */
+}
+
+.membership-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.membership-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* تنسيق الفقرات */
+.membership-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #444;
+}
+
+/* تنسيق القوائم */
+.membership-container ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.membership-container ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.membership-container ul li::before {
+    content: "•";
+    color: #0056b3; /* اللون الرئيسي للنقاط */
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+
+/* تنسيق قسم الفوائد */
+.membership-container .benefits ul li {
+    color: #333;
+}
+
+/* تنسيق قسم الشروط */
+.membership-container .requirements ul li {
+    color: #333;
+}
+
+/* تنسيق نموذج Google Forms */
+.membership-form iframe {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: 1000px; /* يمكنك تعديل الارتفاع حسب الحاجة */
+    margin: 0 auto;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل لجعل النموذج يبدو أكثر احترافية */
+    border-radius: 8px; /* زوايا مستديرة للنموذج */
+}
+
+/* تنسيق الأقسام */
+.membership-container section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل للأقسام لجعل التصميم أكثر احترافية */
+}
+
+
+.membership-container .intro {
+    background-color: #eef2f7;
+}
+
+.membership-container .benefits {
+    background-color: #e1f3f1;
+}
+
+.membership-container .requirements {
+    /* background-color: #fef7e6; */
+    background-color: #eef2f7 !important;
+}
+
+/* تفاعل الشاشة الصغيرة */
+@media (max-width: 768px) {
+    .membership-container h1 {
+        font-size: 2rem;
+    }
+
+    .membership-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .membership-container h3 {
+        font-size: 1.6rem;
+    }
+
+    .membership-container p, .membership-container ul li {
+        font-size: 1rem;
+    }
+
+    .membership-form iframe {
+        height: 900px; /* تقليل الارتفاع للشاشات الأصغر */
+    }
+}
+
