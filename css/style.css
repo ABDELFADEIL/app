@@ -101,7 +101,8 @@ main {
 
 #hr {
     display: none;
-    color: var(--bg-color);
+    background-color: var(--bg-color);
+    border: none;
 }
 .nav {
     display: flex;
@@ -131,13 +132,13 @@ main {
 }
 
 #hr.show  {
-    /* display: block; */
-    height: 2px;
+    display: block;
+    height: 1px;
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
-    top: 90px;
+    top: 104px;
     z-index: 10000;
 }
 
@@ -415,7 +416,7 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 104px;
+    top: 103px;
     right: 0;
     left: 0;
     background-color: var(--bg2-color);
@@ -430,7 +431,7 @@ main {
 }
 
 .nav-list.show li:hover {
-    background-color: var(--text-color);
+    background-color: var(--bg2-color);
 }
 .nav-list.show li:hover a{
     color: var(--white-color);

@@ -21,6 +21,7 @@ function navigateToPage(pageUrl) {
             const closeMenu = () => {
                 navList.classList.remove('show');
                 burger.classList.remove('active');
+                hr.classList.remove('show');
             };
 
             // Burger menu click event
