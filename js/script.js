@@ -8,10 +8,12 @@ function navigateToPage(pageUrl) {
             const burger = document.getElementById('burger');
             const navList = document.getElementById('nav-list');
             const navLinks = document.querySelectorAll('.nav-list a');
+            const hr = document.getElementById('hr');
 
             // Toggle menu function
             const toggleMenu = () => {
                 navList.classList.toggle('show');
+                hr.classList.toggle('show');
                 burger.classList.toggle('active');
             };
 

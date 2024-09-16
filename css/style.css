@@ -99,6 +99,10 @@ main {
     max-height: 70px;
 }
 
+#hr {
+    display: none;
+    color: var(--bg-color);
+}
 .nav {
     display: flex;
     align-items: center;
@@ -115,14 +119,26 @@ main {
 }
 
 .nav-list a {
-    color: var(--text-color);
+    color: var(--white-color);
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     padding: 5px;
+    font-weight: 600;
 }
 
 .nav-list a:hover {
     color: var(--primary-color);
+}
+
+#hr.show  {
+    /* display: block; */
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 90px;
+    z-index: 10000;
 }
 
 /* Burger Menu Styles */
@@ -399,10 +415,10 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 115px;
+    top: 104px;
     right: 0;
     left: 0;
-    background-color: #d9c692;
+    background-color: var(--bg2-color);
     width: 100%;
     text-align: center;
     z-index: 1000;
@@ -419,19 +435,8 @@ main {
 .nav-list.show li:hover a{
     color: var(--white-color);
 }
-#hr {
-    display: none;
-}
-#hr.show  {
-    display: block;
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 90px;
-    z-index: 10001;
-}
+
+
 
     .burger {
         display: flex; /* Show burger menu icon */
