@@ -55,14 +55,16 @@ p {
 }
 
 /* تنسيق نموذج الاتصال */
-form {
+/* تنسيق نموذج Google Forms */
+.contact-form iframe {
+    display: block;
+    width: 100%;
     max-width: 800px;
+    height: 1000px; /* يمكنك تعديل الارتفاع حسب الحاجة */
     margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    direction: rtl;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل لجعل النموذج يبدو أكثر احترافية */
+    border-radius: 8px; /* زوايا مستديرة للنموذج */
 }
 
 label {
@@ -152,5 +154,8 @@ button:hover {
 
     p, input, textarea {
         font-size: 1rem;
+    }
+    .contact-form iframe {
+        height: 900px; /* تقليل الارتفاع للشاشات الأصغر */
     }
 }
