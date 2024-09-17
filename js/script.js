@@ -55,23 +55,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //
-  const newsCarousel = document.getElementById('newsCarousel');
-  let newsIndex = 0;
-  
-  document.getElementById('nextNews').addEventListener('click', () => {
-      newsIndex = (newsIndex + 1) % newsCarousel.children.length;
-      updateNewsCarousel();
-  });
-  
-  document.getElementById('prevNews').addEventListener('click', () => {
-      newsIndex = (newsIndex - 1 + newsCarousel.children.length) % newsCarousel.children.length;
-      updateNewsCarousel();
-  });
-  
-  function updateNewsCarousel() {
-      newsCarousel.style.transform = `translateX(-${newsIndex * 100}%)`;
-  }
-  
+    const newsCarousel = document.getElementById('newsCarousel');
+    let newsIndex = 0;
+    
+    // الوظيفة لتحديث الكاروسول حسب المؤشر
+    function updateNewsCarousel() {
+        newsCarousel.style.transform = `translateX(${newsIndex * 100}%)`;
+    }
+    
+    // الوظيفة للتحرك إلى العنصر التالي
+    function moveToNextNews() {
+        newsIndex = (newsIndex + 1) % newsCarousel.children.length;
+        updateNewsCarousel();
+    }
+    
+    // التنقل اليدوي عند الضغط على الأزرار
+    document.getElementById('nextNews').addEventListener('click', moveToNextNews);
+    document.getElementById('prevNews').addEventListener('click', () => {
+        newsIndex = (newsIndex - 1 + newsCarousel.children.length) % newsCarousel.children.length;
+        updateNewsCarousel();
+    });
+    
+    // الانتقال التلقائي كل 2 ثانية
+    setInterval(moveToNextNews, 5000);
   // 
   
 });
