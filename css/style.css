@@ -718,4 +718,7 @@ h2 {
         font-size: 0.7rem;
         -webkit-line-clamp: 1; /* تحديد عدد السطور */
     }
+    .container {
+        width: 98%;
+    }
 }
