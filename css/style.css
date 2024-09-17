@@ -242,6 +242,13 @@ h2 {
     gap: 20px;
 }
 
+.section-title {
+    font-size: 1.3rem;
+    color: var(--bg2-color);
+    margin: 0px;
+    text-align: right;
+}
+
 /* Latest News Section */
 .news-section {
     flex: 2;
@@ -288,7 +295,7 @@ h2 {
 .news-item-content h3 {
     margin-bottom: 10px;
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--color-br-5);
 }
 
 .news-item-content p {
