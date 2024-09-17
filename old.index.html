@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>تجمع أحرار السودان</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+
+        <div class="header-container container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_white.png" alt="شعار التجمع">
+                    </a>
+            </div>
+            <nav class="nav">
+                <hr id="hr">
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="pages/about.html">من نحن</a></li>
+                    <li><a href="pages/membership.html">العضوية</a></li>
+                    <li><a href="pages/events.html">الفعاليات</a></li>
+                    <li><a href="pages/contact.html">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <!-- Burger Menu Button -->
+            <div class="burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>انضم إلينا لمستقبل أفضل</h1>
+            <button class="btn-primary" onclick="navigateToPage('./pages/membership.html')">انضم الآن</button>
+        </div>
+    </section>
+
+    <!-- Info Sections -->
+    <section class="info-sections">
+        <div class="info-box-container">
+            <div class="info-box">
+                <img src="./images/manif.jpg" alt="من نحن">
+                <div class="info-box-content">
+                    <h2>من نحن</h2>
+                    <p>تعرف على أهداف ورؤية التجمع.</p><br>
+                    <button class="btn-secondary" onclick="navigateToPage('./pages/about.html')">المزيد</button>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="./images/manif1.jpg" alt="العضوية">
+                <div class="info-box-content">
+                    <h2>العضوية</h2>
+                    <p>انضم إلينا وكن جزءًا من التجمع.</p>
+                    <button class="btn-secondary" onclick="navigateToPage('./pages/membership.html')">المزيد</button>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="./images/manif1.jpg" alt="الأحداث">
+                <div class="info-box-content">
+                    <h2>الفعاليات</h2>
+                    <p>اطلع على أحدث فعالياتنا.</p>
+                    <button class="btn-secondary" onclick="navigateToPage('./pages/events.html')">المزيد</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>تجمع أحرار السودان</h3>
+                <p>نحن ملتزمون ببناء مجتمع متماسك وموحد يسعى لتحقيق مستقبل مشرق.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>روابط مهمة</h3>
+                <ul>
+                    <li><a href="./index.html">الرئيسية</a></li>
+                    <li><a href="./pages/about.html">من نحن</a></li>
+                    <li><a href="./pages/membership.html">العضوية</a></li>
+                    <li><a href="#">الفعاليات</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/facebook-icon.webp" alt="Facebook"></a>
+                    <a href="#"><img src="./images/twitter-icon.webp" alt="Twitter"></a>
+                    <a href="#"><img src="./images/instagram-icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 تجمع أحرار السودان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="./js/script.js">
+
+    </script>
+</body>
+
+</html>
