@@ -243,10 +243,11 @@ h2 {
 }
 
 .section-title {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--bg2-color);
     margin: 0px;
     text-align: right;
+    padding: 0;
 }
 
 /* Latest News Section */
