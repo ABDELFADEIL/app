@@ -105,8 +105,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
   // يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
   
+  // الحصول على المسار الحالي للصفحة
+const currentPath = window.location.pathname;
+
+// تحديد المسار الصحيح لملف JSON بناءً على الصفحة
+let jsonFilePath;
+if (currentPath.includes('index.html')) {
+    // إذا كانت الصفحة هي صفحة تفاصيل المقال
+    jsonFilePath = '../app/data/articles.json';
+} else {
+    // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
+    jsonFilePath = '../data/articles.json';
+}
+
   // جلب المقالات من ملف JSON
-  fetch('../app/data/articles.json')
+  fetch(jsonFilePath)
   .then(response => response.json())
   .then(data => {
       const articles = data.articles;
