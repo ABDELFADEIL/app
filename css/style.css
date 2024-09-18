@@ -284,6 +284,7 @@ h2.section-title.section-title-article {
     aspect-ratio: 16 / 9; /* Fixing the aspect ratio to 16:9 */
     display: flex;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .news-item img {
@@ -355,6 +356,7 @@ h2.section-title.section-title-article {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .article-item img {
