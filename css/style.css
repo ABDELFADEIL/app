@@ -248,11 +248,16 @@ h2 {
     margin: 0px;
     text-align: right;
 }
-.articles-section .section-title
+ .section-title
 {
-    font-size: .9rem;
-    margin: 0;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
     padding: 0;
+}
+
+h2.section-title.section-title-article {
+    position: absolute;
+    top: 5px;
 }
 
 /* Latest News Section */
@@ -339,6 +344,8 @@ h2 {
     border-radius: 8px;
     max-height: 300px; /* ارتفاع ثابت للحاوية */
     overflow-y: auto; /* تفعيل التمرير العمودي عند الحاجة */
+    position: relative;
+    padding-top: 35px;
 }
 
 .article-item {
@@ -717,5 +724,12 @@ h2 {
     .news-item-content p {
         font-size: 0.7rem;
         -webkit-line-clamp: 1; /* تحديد عدد السطور */
+    }
+    .container {
+        width: 98%;
+    }
+
+    .header-container.container {
+        width: 94%;
     }
 }
