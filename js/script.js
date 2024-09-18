@@ -110,12 +110,12 @@ const currentPath = window.location.pathname;
 
 // تحديد المسار الصحيح لملف JSON بناءً على الصفحة
 let jsonFilePath;
-if (currentPath.includes('index.html')) {
+if (currentPath.includes('article-details.html')) {
     // إذا كانت الصفحة هي صفحة تفاصيل المقال
-    jsonFilePath = '../app/data/articles.json';
+    jsonFilePath = './data/articles.json';
 } else {
     // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
-    jsonFilePath = '../data/articles.json';
+    jsonFilePath = '../app/data/articles.json';
 }
 
   // جلب المقالات من ملف JSON
