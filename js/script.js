@@ -145,7 +145,7 @@ if (currentPath.includes('article-details.html')) {
           articleTitle.textContent = article.title;
   
           const articleLink = document.createElement('a');
-          articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
+          articleLink.href = `pages/article-details.html?id=${article.id}`;
           articleLink.textContent = "اقرأ المزيد";
   
           articleContent.appendChild(articleTitle);
