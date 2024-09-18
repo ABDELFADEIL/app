@@ -3,7 +3,7 @@
       {
         "id": 1,
         "title": "دولة التزييف في مقابل سجية الريف!",
-        "image": "../images/burhan_selfakeer.jpg",
+        "image": "../app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الأول. يمكنك إضافة المزيد من الفقرات والمحتوى هنا.",
         "author": {
           "name": "محمد الربيع",
@@ -13,7 +13,7 @@
       {
         "id": 2,
         "title": "حرب الكيزان",
-        "image": "../images/burhan_selfakeer.jpg",
+        "image": "../app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الثاني. تأكد من أن النص منسق بشكل جميل وسهل القراءة.",
         "author": {
           "name": "هجو أحمد",
@@ -23,7 +23,7 @@
       {
         "id": 3,
         "title": "آثار الحروب: انفلات أمني وسرقة ونهب",
-        "image": "../images/burhan_selfakeer.jpg",
+        "image": "../app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الأول. يمكنك إضافة المزيد من الفقرات والمحتوى هنا.",
         "author": {
           "name": "عبدالفضيل شريف",
@@ -33,11 +33,11 @@
       {
         "id": 4,
         "title": "آثار الحروب: انفلات أمني وسرقة ونهب",
-        "image": "../images/burhan_selfakeer.jpg",
+        "image": "../app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الثاني. تأكد من أن النص منسق بشكل جميل وسهل القراءة.",
         "author": {
           "name": "عبدالفضيل شريف",
-          "image": "../images/Photo.jpg"
+          "image": "../app/images/Photo.jpg"
         }
       }
     ]
