@@ -80,8 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(moveToNextNews, 5000);
   // 
   
-
-
 });
   // الحصول على جميع العناصر التي تحتوي على المقالات
   const articleItems = document.querySelectorAll('.article-item');
@@ -150,3 +148,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   })
   .catch(error => console.error('خطأ في جلب المقالات:', error));
+
