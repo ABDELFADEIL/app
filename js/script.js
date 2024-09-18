@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const articleId = this.getAttribute('data-article-id');
           
           // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
-          window.location.href = `pages/article-details.html?id=${articleId}`;
+          window.location.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${articleId}`;
       });
     });
   // استخراج معرف المقال من الـ URL
@@ -145,7 +145,7 @@ if (currentPath.includes('article-details.html')) {
           articleTitle.textContent = article.title;
   
           const articleLink = document.createElement('a');
-          articleLink.href = `article-details.html?id=${article.id}`;
+          articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
           articleLink.textContent = "اقرأ المزيد";
   
           articleContent.appendChild(articleTitle);
