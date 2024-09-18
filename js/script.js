@@ -131,7 +131,7 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
         articleTitle.textContent = article.title;
 
         const articleLink = document.createElement('a');
-        articleLink.href = `article-details.html?id=${article.id}`;
+        articleLink.href = `pages/article-details.html?id=${article.id}`;
         articleLink.textContent = "اقرأ المزيد";
 
         articleContent.appendChild(articleTitle);
