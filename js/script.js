@@ -112,7 +112,7 @@ const currentPath = window.location.pathname;
 let jsonFilePath;
 if (currentPath.includes('article-details.html')) {
     // إذا كانت الصفحة هي صفحة تفاصيل المقال
-    jsonFilePath = '../../data/articles.json';
+    jsonFilePath = '../../app/data/articles.json';
 } else {
     // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
     jsonFilePath = '../app/data/articles.json';
