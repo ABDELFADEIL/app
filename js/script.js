@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
           // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
           window.location.href = `pages/article-details.html?id=${articleId}`;
       });
-    });
   
   // استخراج معرف المقال من الـ URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -162,3 +161,4 @@ if (currentPath.includes('article-details.html')) {
   })
   .catch(error => console.error('خطأ في جلب المقالات:', error));
 
+});
