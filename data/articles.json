@@ -7,7 +7,7 @@
         "content": "هذا هو النص الكامل للمقال الأول. يمكنك إضافة المزيد من الفقرات والمحتوى هنا.",
         "author": {
           "name": "محمد الربيع",
-          "image": "../images/rabea_photo.jpg"
+          "image": "../app/images/rabea_photo.jpg"
         }
       },
       {
@@ -17,7 +17,7 @@
         "content": "هذا هو النص الكامل للمقال الثاني. تأكد من أن النص منسق بشكل جميل وسهل القراءة.",
         "author": {
           "name": "هجو أحمد",
-          "image": "../images/hugo_photo.jpg"
+          "image": "../app/images/hugo_photo.jpg"
         }
       },
       {
@@ -27,7 +27,7 @@
         "content": "هذا هو النص الكامل للمقال الأول. يمكنك إضافة المزيد من الفقرات والمحتوى هنا.",
         "author": {
           "name": "عبدالفضيل شريف",
-          "image": "../images/Photo.jpg"
+          "image": "../app/images/Photo.jpg"
         }
       },
       {

@@ -80,71 +80,73 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(moveToNextNews, 5000);
   // 
   
+
+
+});
   // الحصول على جميع العناصر التي تحتوي على المقالات
-const articleItems = document.querySelectorAll('.article-item');
+  const articleItems = document.querySelectorAll('.article-item');
 
-// إضافة مستمع للنقر على كل عنصر article-item
-articleItems.forEach(item => {
-    item.addEventListener('click', function() {
-        // استخراج معرف المقال من data-article-id
-        const articleId = this.getAttribute('data-article-id');
-        
-        // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
-        window.location.href = `pages/article-details.html?id=${articleId}`;
-    });
-});
-
-// استخراج معرف المقال من الـ URL
-const urlParams = new URLSearchParams(window.location.search);
-const articleId = urlParams.get('id');
-
-// طباعة المعرف للتحقق
-console.log('معرف المقال:', articleId);
-
-// استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
-// يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
-
-// جلب المقالات من ملف JSON
-fetch('https://abdelfadeil.github.io/app/data/articles.json')
-.then(response => response.json())
-.then(data => {
-    const articles = data.articles;
-    const articlesContainer = document.getElementById('articles-section');
-
-    // إنشاء العناصر الخاصة بالمقالات
-    articles.forEach(article => {
-        const articleItem = document.createElement('article');
-        articleItem.classList.add('article-item');
-        articleItem.setAttribute('data-article-id', article.id);
-        
-        // إضافة الصورة المصغرة
-        const articleThumbnail = document.createElement('img');
-        articleThumbnail.src = article.image;
-        articleThumbnail.alt = article.title;
-        articleThumbnail.classList.add('article-thumbnail');
-
-        // إضافة محتوى المقال
-        const articleContent = document.createElement('div');
-        articleContent.classList.add('article-item-content');
-        
-        const articleTitle = document.createElement('h3');
-        articleTitle.textContent = article.title;
-
-        const articleLink = document.createElement('a');
-        articleLink.href = `article-details.html?id=${article.id}`;
-        articleLink.textContent = "اقرأ المزيد";
-
-        articleContent.appendChild(articleTitle);
-        articleContent.appendChild(articleLink);
-
-        // تجميع العناصر
-        articleItem.appendChild(articleThumbnail);
-        articleItem.appendChild(articleContent);
-
-        // إضافة المقال إلى الحاوية
-        articlesContainer.appendChild(articleItem);
-    });
-})
-.catch(error => console.error('خطأ في جلب المقالات:', error));
-
-});
+  // إضافة مستمع للنقر على كل عنصر article-item
+  articleItems.forEach(item => {
+      item.addEventListener('click', function() {
+          // استخراج معرف المقال من data-article-id
+          const articleId = this.getAttribute('data-article-id');
+          
+          // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
+          window.location.href = `pages/article-details.html?id=${articleId}`;
+      });
+  });
+  
+  // استخراج معرف المقال من الـ URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const articleId = urlParams.get('id');
+  
+  // طباعة المعرف للتحقق
+  console.log('معرف المقال:', articleId);
+  
+  // استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
+  // يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
+  
+  // جلب المقالات من ملف JSON
+  fetch('../app/data/articles.json')
+  .then(response => response.json())
+  .then(data => {
+      const articles = data.articles;
+      const articlesContainer = document.getElementById('articles-section');
+  
+      // إنشاء العناصر الخاصة بالمقالات
+      articles.forEach(article => {
+          const articleItem = document.createElement('article');
+          articleItem.classList.add('article-item');
+          articleItem.setAttribute('data-article-id', article.id);
+          
+          // إضافة الصورة المصغرة
+          const articleThumbnail = document.createElement('img');
+          articleThumbnail.src = article.author.image;
+          console.log(article.author.image);
+          articleThumbnail.alt = article.title;
+          articleThumbnail.classList.add('article-thumbnail');
+  
+          // إضافة محتوى المقال
+          const articleContent = document.createElement('div');
+          articleContent.classList.add('article-item-content');
+          
+          const articleTitle = document.createElement('h3');
+          articleTitle.textContent = article.title;
+  
+          const articleLink = document.createElement('a');
+          articleLink.href = `pages/article-details.html?id=${article.id}`;
+          articleLink.textContent = "اقرأ المزيد";
+  
+          articleContent.appendChild(articleTitle);
+          articleContent.appendChild(articleLink);
+  
+          // تجميع العناصر
+          articleItem.appendChild(articleThumbnail);
+          articleItem.appendChild(articleContent);
+  
+          // إضافة المقال إلى الحاوية
+          articlesContainer.appendChild(articleItem);
+      });
+  })
+  .catch(error => console.error('خطأ في جلب المقالات:', error));
