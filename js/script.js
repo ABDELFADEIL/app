@@ -100,7 +100,7 @@ const articleId = urlParams.get('id');
 
 // طباعة المعرف للتحقق
 console.log('معرف المقال:', articleId);
-
+});
 // استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
 // يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
 
@@ -147,4 +147,4 @@ fetch('../data/articles.json')
 })
 .catch(error => console.error('خطأ في جلب المقالات:', error));
 
-});
+
