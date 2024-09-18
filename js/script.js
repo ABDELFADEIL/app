@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
           window.location.href = `pages/article-details.html?id=${articleId}`;
       });
-
+    });
   
   // استخراج معرف المقال من الـ URL
   const urlParams = new URLSearchParams(window.location.search);
@@ -112,14 +112,14 @@ const currentPath = window.location.pathname;
 let jsonFilePath;
 if (currentPath.includes('article-details.html')) {
     // إذا كانت الصفحة هي صفحة تفاصيل المقال
-    jsonFilePath = '../../app/data/articles.json';
+    jsonFilePath = 'https://abdelfadeil.github.io/app/data/articles.json';
 } else {
     // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
     jsonFilePath = '../app/data/articles.json';
 }
 
   // جلب المقالات من ملف JSON
-  fetch(jsonFilePath)
+  fetch("https://abdelfadeil.github.io/app/data/articles.json")
   .then(response => response.json())
   .then(data => {
       const articles = data.articles;
@@ -146,7 +146,7 @@ if (currentPath.includes('article-details.html')) {
           articleTitle.textContent = article.title;
   
           const articleLink = document.createElement('a');
-          articleLink.href = `pages/article-details.html?id=${article.id}`;
+          articleLink.href = `article-details.html?id=${article.id}`;
           articleLink.textContent = "اقرأ المزيد";
   
           articleContent.appendChild(articleTitle);
@@ -161,4 +161,4 @@ if (currentPath.includes('article-details.html')) {
       });
   })
   .catch(error => console.error('خطأ في جلب المقالات:', error));
-});
+
