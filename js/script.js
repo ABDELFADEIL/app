@@ -80,6 +80,32 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(moveToNextNews, 5000);
   // 
   
+  // الحصول على جميع العناصر التي تحتوي على المقالات
+const articleItems = document.querySelectorAll('.article-item');
+
+// إضافة مستمع للنقر على كل عنصر article-item
+articleItems.forEach(item => {
+    item.addEventListener('click', function() {
+        // استخراج معرف المقال من data-article-id
+        const articleId = this.getAttribute('data-article-id');
+        
+        // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
+        window.location.href = `pages/article-details.html?id=${articleId}`;
+    });
 });
+
+// استخراج معرف المقال من الـ URL
+const urlParams = new URLSearchParams(window.location.search);
+const articleId = urlParams.get('id');
+
+// طباعة المعرف للتحقق
+console.log('معرف المقال:', articleId);
+
+// استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
+// يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
+
+});
+
+
 
   
