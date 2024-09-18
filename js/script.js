@@ -147,4 +147,4 @@ fetch('../data/articles.json')
 })
 .catch(error => console.error('خطأ في جلب المقالات:', error));
 
-                          });
+});
