@@ -105,7 +105,7 @@ console.log('معرف المقال:', articleId);
 // يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
 
 // جلب المقالات من ملف JSON
-fetch('../data/articles.json')
+fetch('https://abdelfadeil.github.io/app/data/articles.json')
 .then(response => response.json())
 .then(data => {
     const articles = data.articles;
