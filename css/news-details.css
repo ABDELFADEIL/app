@@ -74,6 +74,7 @@
     text-align: center;
     padding: 15px;
     scroll-snap-align: start; /* محاذاة العناصر */
+    cursor: pointer;
 }
 
 .other-news-image {

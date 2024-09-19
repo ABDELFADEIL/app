@@ -1,5 +1,5 @@
 // استخراج معرف الخبر من الـ URL
-const urlParams = new URLSearchParams(window.location.search);
+urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get('id');
 
 // جلب الأخبار من ملف JSON
