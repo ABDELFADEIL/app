@@ -1,0 +1,114 @@
+/* تنسيق الخبر */
+
+.page-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* القسم الخاص بتفاصيل الخبر */
+.news-details-container {
+    flex: 2; /* يأخذ 2/3 من العرض */
+}
+
+/* .news-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+.news-title {
+    font-size: 2.5rem;
+    color: #0056b3;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.publish-date {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.publish-date {
+    text-align: right;
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* تنسيق الأخبار الأخرى */
+.other-news-section {
+    flex: 1; /* يأخذ 1/3 من العرض */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.other-news-section h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.other-news-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* تنسيق الأخبار الأخرى */
+.other-news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.other-news-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.other-news-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.other-news-date {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* تصميم responsive بحيث تصبح الأعمدة عمودية على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+}

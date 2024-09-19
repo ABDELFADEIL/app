@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>تجمع أحرار السودان</title>
+    <title>تفاصيل الخبر | تجمع أحرار السودان</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/news-details.css">
 </head>
 
 <body>
@@ -37,153 +38,32 @@
             </div>
         </div>
     </header>
+        <!-- حاوية الخبر -->
+        <main class="page-container">
+            <div class="news-details-container">
 
-    <div class="container">
-        <!-- Main Section: Latest News & Articles Side by Side -->
-        <h2 class="section-title">آخر الأخبار</h2>
-        <div class="main-section">
-            <!-- Latest News Section -->
-            <section class="news-section">
-                <div class="news-carousel" id="news-carousel">
-                    
-                    <!-- <div class="news-item">
-                        <img src="images/burhan_selfakeer.jpg" alt="خبر">
-                        <div class="news-item-content">
-                            <h3>زيارة البرهان لجوبا</h3>
-                            <p>مستشاره أجرى اتصالات مع قادة بالدعم السريع.. سلفاكير يطرح مبادرة للتوسط لحل النزاع في
-                                السودان..
-                            </p>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <img src="images/burhan_selfakeer.jpg" alt="خبر">
-                        <div class="news-item-content">
-                            <h3>زيارة البرهان لجوبا</h3>
-                            <p>مستشاره أجرى اتصالات مع قادة بالدعم السريع.. سلفاكير يطرح مبادرة للتوسط لحل النزاع في
-                                السودان..
-                            </p>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <img src="images/manif1.jpg" alt="خبر">
-                        <div class="news-item-content">
-                            <h3>عنوان الخبر الثاني</h3>
-                            <p>بعض النصوص الملخصة حول الخبر الثاني... النص يجب ألا يتجاوز السطرين لضمان التناسق.</p>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <img src="images/burhan_selfakeer.jpg" alt="خبر">
-                        <div class="news-item-content">
-                            <h3>زيارة البرهان لجوبا</h3>
-                            <p>مستشاره أجرى اتصالات مع قادة بالدعم السريع.. سلفاكير يطرح مبادرة للتوسط لحل النزاع في
-                                السودان..
-                            </p>
-                        </div>
-                    </div> -->
-                    <!-- المزيد من الأخبار -->
-                </div>
-                <!-- Controls for News Carousel -->
-                <div class="news-carousel-controls">
-                    <button id="prevNews">‹</button>
-                    <button id="nextNews">›</button>
-                </div>
-            </section>
+                <!-- عنوان الخبر -->
+                <h1 id="news-title" class="news-title"></h1>
 
-            <!-- Articles Section -->
-            <!-- قسم المقالات -->
-                <section id="articles-section" class="articles-section articles-home-page">
-                   <h2 class="section-title section-title-article">مقالات الأعضاء</h2>
-                </section>
-            <!-- <section class="articles-section">
-                <h2 class="section-title section-title-article">مقالات الأعضاء</h2>
-                <div class="article-item" data-article-id="1">
-                    <img src="images/rabea_photo.jpg" alt="كاتب">
-                    <div class="article-item-content">
-                        <h4>دولة التزييف في مقابل سجية الريف!</h4>
-                        <p>محمد الرييع</p>
-                    </div>
-                </div>
-                <div class="article-item" data-article-id="2">
-                    <img src="images/hugo_photo.jpg" alt="كاتب">
-                    <div class="article-item-content">
-                        <h4>حرب الكيزان</h4>
-                        <p>هجو أحمد</p>
-                    </div>
-                </div>
-                <div class="article-item" data-article-id="3">
-                    <img src="images/Photo.jpg" alt="كاتب">
-                    <div class="article-item-content">
-                        <h4>آثار الحروب: انفلات أمني وسرقة ونهب</h4>
-                        <p>عبدالفضيل شريف</p>
-                    </div>
-                </div>
-            </section> -->
+                <!-- تاريخ النشر -->
+                <p id="publish-date" class="publish-date"></p>
 
-        </div>
+                <!-- الصورة الرئيسية للخبر -->
+                <img id="news-image" class="news-image" alt="صورة الخبر">
 
-        <!-- Videos Section -->
-        <section class="videos-section">
-            <h2 class="section-title">فيديوهات</h2>
-            <div class="video-carousel">
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/9hy3jafhVrg?si=gwVpbaEKRteCCKdr"
-                        allowfullscreen></iframe>
-                    <p>عنوان الفيديو الأول</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/9hy3jafhVrg?si=gwVpbaEKRteCCKdr"
-                        allowfullscreen></iframe>
-                    <p>عنوان الفيديو الثاني</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/9hy3jafhVrg?si=gwVpbaEKRteCCKdr"
-                        allowfullscreen></iframe>
-                    <p>عنوان الفيديو الثالث</p>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/9hy3jafhVrg?si=gwVpbaEKRteCCKdr"
-                        allowfullscreen></iframe>
-                    <p>عنوان الفيديو الرابع</p>
-                </div>
-                <!-- المزيد من الفيديوهات -->
+                <!-- نص الخبر -->
+                <div id="news-content" class="news-content"></div>
             </div>
-        </section>
 
-    </div>
-    </div>
-
-    <div class="container">
-        <!-- Info Sections -->
-        <section class="info-sections">
-            <div class="info-box-container">
-                <div class="info-box">
-                    <img src="./images/manif.jpg" alt="من نحن">
-                    <div class="info-box-content">
-                        <h2>من نحن</h2>
-                        <p>تعرف على أهداف ورؤية التجمع.</p><br>
-                        <button class="btn-secondary" onclick="navigateToPage('./pages/about.html')">المزيد</button>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <img src="./images/manif1.jpg" alt="العضوية">
-                    <div class="info-box-content">
-                        <h2>العضوية</h2>
-                        <p>انضم إلينا وكن جزءًا من التجمع.</p>
-                        <button class="btn-secondary"
-                            onclick="navigateToPage('./pages/membership.html')">المزيد</button>
-                    </div>
-                </div>
-                <div class="info-box">
-                    <img src="./images/manif1.jpg" alt="الأحداث">
-                    <div class="info-box-content">
-                        <h2>الفعاليات</h2>
-                        <p>اطلع على أحدث فعالياتنا.</p>
-                        <button class="btn-secondary" onclick="navigateToPage('./pages/events.html')">المزيد</button>
-                    </div>
+            <!-- قسم الأخبار الأخرى -->
+            <div class="other-news-section">
+                <h2>أخبار أخرى</h2>
+                <div id="other-news" class="other-news-carousel">
+                    <!-- سيتم إضافة الأخبار الأخرى هنا بواسطة JavaScript -->
                 </div>
             </div>
-        </section>
-    </div>
+
+    </main>
     <!-- fin main -->
     <footer class="footer">
         <div class="container">

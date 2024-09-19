@@ -35,8 +35,14 @@
 .author-name {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-right: 5px;
 }
-
+.publish-date {
+    text-align: right;
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
 /* عنوان المقال */
 .article-title {
     font-size: 1.5rem;
@@ -52,6 +58,7 @@
     border-radius: 8px;
     object-fit: cover;
     margin-bottom: 20px;
+
 }
 
 /* نص المقال */

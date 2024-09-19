@@ -138,7 +138,7 @@ fetch("https://abdelfadeil.github.io/app/data/articles.json")
             if (currentPath.includes('article-details.html')) {
                 // إذا كانت الصفحة هي صفحة تفاصيل المقال
                 const articleLink = document.createElement('a');
-                articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
+                articleLink.href = `http://127.0.0.1:5500/pages/article-details.html?id=${article.id}`;
                 articleLink.textContent = "اقرأ المزيد";
                 articleContent.appendChild(articleLink);
             } else {
@@ -168,7 +168,7 @@ fetch("https://abdelfadeil.github.io/app/data/articles.json")
                     const articleId = item.getAttribute('data-article-id');
                     console.log("articleId", articleId);
                     // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
-                    window.location.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${articleId}`;
+                    window.location.href = `http://127.0.0.1:5500/pages/article-details.html?id=${articleId}`;
                 });
             });
         });
@@ -220,7 +220,7 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
 
             // إضافة مستمع للنقر على محتوى الخبر لنقل المستخدم إلى صفحة تفاصيل الخبر
             newsContent.addEventListener('click', () => {
-                window.location.href = `https://abdelfadeil.github.io/app/pages/news-details.html?id=${newsItem.id}`;
+                window.location.href = `http://127.0.0.1:5500/pages/news-details.html?id=${newsItem.id}`;
             });
         });
     })
@@ -237,10 +237,10 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
     .then(response => response.json())
     .then(data => {
         const articles = data.articles;
-        
+
         // البحث عن المقال بناءً على المعرف
         const article = articles.find(article => article.id == articleId);
-        console.log(article);
+        console.log(article)
         if (article) {
             // عرض عنوان المقال
             document.getElementById('article-title').textContent = article.title;
@@ -253,7 +253,7 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
             document.getElementById('publish-date').textContent = `تاريخ النشر: ${article.date}`;
 
             // عرض صورة المقال الرئيسية
-            document.getElementById('article-image').src = article.image;
+            //document.getElementById('article-image').src = article.image;
 
             // عرض نص المقال
             document.getElementById('article-content').textContent = article.content;
@@ -262,3 +262,65 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
         }
     })
     .catch(error => console.error('خطأ في جلب المقالات:', error));
+
+// استخراج معرف الخبر من الـ URL
+urlParams = new URLSearchParams(window.location.search);
+const newsId = urlParams.get('id');
+
+// جلب الأخبار من ملف JSON
+fetch('https://abdelfadeil.github.io/app/data/articles.json')
+    .then(response => response.json())
+    .then(data => {
+        const news = data.news;
+
+        // البحث عن الخبر بناءً على المعرف
+        const currentNews = news.find(newsItem => newsItem.id == newsId);
+
+        if (currentNews) {
+            // عرض عنوان الخبر
+            document.getElementById('news-title').textContent = currentNews.title;
+
+            // عرض تاريخ النشر
+            document.getElementById('publish-date').textContent = `تاريخ النشر: ${currentNews.date}`;
+
+            // عرض صورة الخبر الرئيسية
+            document.getElementById('news-image').src = currentNews.image;
+
+            // عرض نص الخبر
+            document.getElementById('news-content').textContent = currentNews.content;
+        } else {
+            console.error('خبر غير موجود');
+        }
+
+        // عرض الأخبار الأخرى (التي ليست الخبر الحالي)
+        const otherNewsContainer = document.getElementById('other-news');
+        news.filter(newsItem => newsItem.id != newsId).forEach(otherNews => {
+            const otherNewsDiv = document.createElement('div');
+            otherNewsDiv.classList.add('other-news-item');
+
+            const otherNewsImage = document.createElement('img');
+            otherNewsImage.src = otherNews.image;
+            otherNewsImage.alt = otherNews.title;
+            otherNewsImage.classList.add('other-news-image');
+
+            const otherNewsTitle = document.createElement('p');
+            otherNewsTitle.classList.add('other-news-title');
+            otherNewsTitle.textContent = otherNews.title;
+
+            const otherNewsDate = document.createElement('p');
+            otherNewsDate.classList.add('other-news-date');
+            otherNewsDate.textContent = otherNews.date;
+
+            otherNewsDiv.appendChild(otherNewsImage);
+            otherNewsDiv.appendChild(otherNewsTitle);
+            otherNewsDiv.appendChild(otherNewsDate);
+
+            // عند النقر، الانتقال إلى صفحة تفاصيل الخبر
+            otherNewsDiv.addEventListener('click', () => {
+                window.location.href = `news-details.html?id=${otherNews.id}`;
+            });
+
+            otherNewsContainer.appendChild(otherNewsDiv);
+        });
+    })
+    .catch(error => console.error('خطأ في جلب الأخبار:', error));
