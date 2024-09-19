@@ -22,7 +22,7 @@
       },
       {
         "id": 3,
-        "title": " 1 آثار الحروب: انفلات أمني وسرقة ونهب",
+        "title": "آثار الحروب: انفلات أمني وسرقة ونهب",
         "image": "https://abdelfadeil.github.io/app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الثاني. تأكد من أن النص منسق بشكل جميل وسهل القراءة.",
         "author": {
@@ -32,7 +32,7 @@
       },
       {
         "id": 4,
-        "title": " 2 آثار الحروب: انفلات أمني وسرقة ونهب",
+        "title": " آثار الحروب: انفلات أمني وسرقة ونهب",
         "image": "https://abdelfadeil.github.io/app/images/burhan_selfakeer.jpg",
         "content": "هذا هو النص الكامل للمقال الثاني. تأكد من أن النص منسق بشكل جميل وسهل القراءة.",
         "author": {
@@ -40,6 +40,22 @@
           "image": "https://abdelfadeil.github.io/app/images/Photo.jpg"
         }
       }
-    ]
+    ],
+    "news": [
+    {
+      "id": 1,
+      "title": "خبر عاجل الأول",
+      "image": "https://abdelfadeil.github.io/app/images/burhan_selfakeer.jpg",
+      "content": "تفاصيل الخبر الأول.",
+      "date": "2024-09-18"
+    },
+    {
+      "id": 2,
+      "title": "خبر عاجل الثاني",
+      "image": "https://abdelfadeil.github.io/app/images/manif.jpg",
+      "content": "تفاصيل الخبر الثاني.",
+      "date": "2024-09-17"
+    }
+  ]
   }
   
