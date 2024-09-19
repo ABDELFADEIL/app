@@ -1,8 +1,7 @@
 /* تنسيق الخبر */
 
+/* حاوية الصفحة */
 .page-container {
-    display: flex;
-    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -65,31 +64,27 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.other-news-section h2 {
-    text-align: center;
-    color: #0056b3;
-    margin-bottom: 20px;
-}
-
 .other-news-carousel {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    overflow-x: auto; /* السماح بالتمرير الأفقي */
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* يساعد في التنقل بين العناصر بسهولة */
 }
-
-/* تنسيق الأخبار الأخرى */
 .other-news-item {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    cursor: pointer;
+    width: 250px;
+    flex-shrink: 0; /* التأكد من عدم تصغير حجم العنصر */
     text-align: center;
+    padding: 15px;
+    scroll-snap-align: start; /* محاذاة العناصر */
 }
 
 .other-news-image {
     width: 100%;
-    height: 120px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -105,6 +100,14 @@
     font-size: 1rem;
     color: #777;
 }
+
+.other-news-section h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+
 
 /* تصميم responsive بحيث تصبح الأعمدة عمودية على الشاشات الصغيرة */
 @media (max-width: 768px) {
