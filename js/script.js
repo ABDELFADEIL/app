@@ -218,7 +218,7 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
 
             // إضافة مستمع للنقر على محتوى الخبر لنقل المستخدم إلى صفحة تفاصيل الخبر
             newsContent.addEventListener('click', () => {
-                window.location.href = `pages/news-details.html?id=${newsItem.id}`;
+                window.location.href = `https://abdelfadeil.github.io/app/pages/news-details.html?id=${newsItem.id}`;
             });
         });
     })
