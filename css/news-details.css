@@ -1,14 +1,8 @@
 /* تنسيق الخبر */
 
-/* حاوية الصفحة */
-.page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
 /* القسم الخاص بتفاصيل الخبر */
 .news-details-container {
-    flex: 2; /* يأخذ 2/3 من العرض */
+    margin-bottom: 20px;
 }
 
 /* .news-details {
@@ -21,7 +15,7 @@
 } */
 .news-title {
     font-size: 2.5rem;
-    color: #0056b3;
+    color: var(--bg2-color);
     text-align: right;
     margin-bottom: 20px;
 }
@@ -103,11 +97,25 @@
 
 .other-news-section h2 {
     text-align: center;
-    color: #0056b3;
+    color: var(--bg2-color);;
     margin-bottom: 20px;
 }
 
+/* أزرار pagination */
+.pagination-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
 
+.pagination-buttons button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /* تصميم responsive بحيث تصبح الأعمدة عمودية على الشاشات الصغيرة */
 @media (max-width: 768px) {
