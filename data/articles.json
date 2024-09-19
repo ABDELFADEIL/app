@@ -7,7 +7,7 @@
         "content": "هذا هو النص الكامل للمقال الأول. يمكنك إضافة المزيد من الفقرات والمحتوى هنا.",
         "author": {
           "name": "محمد الربيع",
-          "image": "./images/rabea_photo.jpg"
+          "image": "https://abdelfadeil.github.io/app/images/rabea_photo.jpg"
         }
       },
       {
