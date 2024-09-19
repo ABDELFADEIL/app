@@ -8,7 +8,8 @@
         "author": {
           "name": "محمد الربيع",
           "image": "https://abdelfadeil.github.io/app/images/rabea_photo.jpg"
-        }
+        },
+        "date": "2024-09-19"
       },
       {
         "id": 2,
@@ -18,7 +19,8 @@
         "author": {
           "name": "هجو أحمد",
           "image": "https://abdelfadeil.github.io/app/images/hugo_photo.jpg"
-        }
+        },
+        "date": "2024-09-19"
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
         "author": {
           "name": "عبدالفضيل شريف",
           "image": "https://abdelfadeil.github.io/app/images/Photo.jpg"
-        }
+        },
+        "date": "2024-09-19"
       },
       {
         "id": 4,
@@ -38,7 +41,8 @@
         "author": {
           "name": "عبدالفضيل شريف",
           "image": "https://abdelfadeil.github.io/app/images/Photo.jpg"
-        }
+        },
+        "date": "2024-09-19"
       }
     ],
     "news": [

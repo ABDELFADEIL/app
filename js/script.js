@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //
-    const newsCarousel = document.getElementById('newsCarousel');
+    const newsCarousel = document.getElementById('news-carousel');
     let newsIndex = 0;
 
     // الوظيفة لتحديث الكاروسول حسب المؤشر
@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // استخراج معرف المقال من الـ URL
-const urlParams = new URLSearchParams(window.location.search);
-const articleId = urlParams.get('id');
+let urlParams = new URLSearchParams(window.location.search);
+let articleId = urlParams.get('id');
 
 // طباعة المعرف للتحقق
 console.log('معرف المقال:', articleId);
@@ -116,6 +116,7 @@ fetch("https://abdelfadeil.github.io/app/data/articles.json")
         articles.forEach(article => {
             const articleItem = document.createElement('article');
             articleItem.classList.add('article-item');
+            console.log(article.id);
             articleItem.setAttribute('data-article-id', article.id);
 
             // إضافة الصورة المصغرة
@@ -147,6 +148,7 @@ fetch("https://abdelfadeil.github.io/app/data/articles.json")
                 const articleParagraphe = document.createElement('p');
                 articleParagraphe.textContent = article.author.name;
                 articleContent.appendChild(articleParagraphe);
+                articleItem.classList.add('article-item-home-page');
             }
             //
 
@@ -157,14 +159,14 @@ fetch("https://abdelfadeil.github.io/app/data/articles.json")
             // إضافة المقال إلى الحاوية
             articlesContainer.appendChild(articleItem);
             // الحصول على جميع العناصر التي تحتوي على المقالات
-            const articleItems = document.querySelectorAll('.articles-home-page');
-
+            const articleItems = document.querySelectorAll('.article-item-home-page');
+            console.log(articleItems.length);
             // إضافة مستمع للنقر على كل عنصر article-item
             articleItems.forEach(item => {
                 item.addEventListener('click', function () {
                     // استخراج معرف المقال من data-article-id
-                    const articleId = this.getAttribute('data-article-id');
-
+                    const articleId = item.getAttribute('data-article-id');
+                    console.log("articleId", articleId);
                     // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
                     window.location.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${articleId}`;
                 });
@@ -224,3 +226,39 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
 
+// استخراج معرف المقال من الـ URL
+urlParams = new URLSearchParams(window.location.search);
+console.log(urlParams);
+articleId = urlParams.get('id');
+
+
+// جلب المقالات من ملف JSON
+fetch('https://abdelfadeil.github.io/app/data/articles.json')
+    .then(response => response.json())
+    .then(data => {
+        const articles = data.articles;
+        
+        // البحث عن المقال بناءً على المعرف
+        const article = articles.find(article => article.id == articleId);
+        console.log(article);
+        if (article) {
+            // عرض عنوان المقال
+            document.getElementById('article-title').textContent = article.title;
+
+            // عرض صورة الكاتب واسمه
+            document.getElementById('author-image').src = article.author.image;
+            document.getElementById('author-name').textContent = article.author.name;
+
+            // عرض تاريخ النشر
+            document.getElementById('publish-date').textContent = `تاريخ النشر: ${article.date}`;
+
+            // عرض صورة المقال الرئيسية
+            document.getElementById('article-image').src = article.image;
+
+            // عرض نص المقال
+            document.getElementById('article-content').textContent = article.content;
+        } else {
+            console.error('مقال غير موجود');
+        }
+    })
+    .catch(error => console.error('خطأ في جلب المقالات:', error));
