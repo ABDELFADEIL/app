@@ -54,9 +54,10 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
 
-    // إعداد pagination
+// إعداد pagination
 let currentPage = 1;
-const newsPerPage = 5;
+const newsPerPage = 5; // عدد الأخبار في كل صفحة
+let newsItems = []; // تعريف المتغير newsItems
 
 // دالة لعرض الأخبار بناءً على الصفحة الحالية
 function displayNewsPage(newsItems, page) {
@@ -125,7 +126,7 @@ function displayPaginationButtons(totalItems, currentPage) {
 fetch('https://abdelfadeil.github.io/app/data/articles.json')
     .then(response => response.json())
     .then(data => {
-        const news = data.news;
-        displayNewsPage(news, currentPage);
+        newsItems = data.news; // تخزين الأخبار في المتغير newsItems
+        displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
