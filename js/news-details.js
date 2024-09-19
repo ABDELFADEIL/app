@@ -130,3 +130,4 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
         displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
+

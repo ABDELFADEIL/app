@@ -226,40 +226,5 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
 
-// استخراج معرف المقال من الـ URL
-urlParams = new URLSearchParams(window.location.search);
-console.log(urlParams);
-articleId = urlParams.get('id');
 
-
-// جلب المقالات من ملف JSON
-fetch('https://abdelfadeil.github.io/app/data/articles.json')
-    .then(response => response.json())
-    .then(data => {
-        const articles = data.articles;
-
-        // البحث عن المقال بناءً على المعرف
-        const article = articles.find(article => article.id == articleId);
-        console.log(article)
-        if (article) {
-            // عرض عنوان المقال
-            document.getElementById('article-title').textContent = article.title;
-
-            // عرض صورة الكاتب واسمه
-            document.getElementById('author-image').src = article.author.image;
-            document.getElementById('author-name').textContent = article.author.name;
-
-            // عرض تاريخ النشر
-            document.getElementById('publish-date').textContent = `تاريخ النشر: ${article.date}`;
-
-            // عرض صورة المقال الرئيسية
-            //document.getElementById('article-image').src = article.image;
-
-            // عرض نص المقال
-            document.getElementById('article-content').textContent = article.content;
-        } else {
-            console.error('مقال غير موجود');
-        }
-    })
-    .catch(error => console.error('خطأ في جلب المقالات:', error));
 
