@@ -114,6 +114,7 @@ function displayPaginationButtons(totalItems, currentPage) {
         button.textContent = i;
         if (i === currentPage) {
             button.disabled = true; // تعطيل الزر الحالي
+            button.classList.add('active'); // إضافة class 'active' للصفحة الحالية
         }
         button.addEventListener('click', () => {
             displayNewsPage(newsItems, i); // تحديث الأخبار بناءً على الصفحة
@@ -126,7 +127,7 @@ function displayPaginationButtons(totalItems, currentPage) {
 fetch('https://abdelfadeil.github.io/app/data/articles.json')
     .then(response => response.json())
     .then(data => {
-        newsItems = data.news; // تخزين الأخبار في المتغير newsItems
+        newsItems = data.news.filter(newsItem => newsItem.id != newsId); // تخزين الأخبار في المتغير newsItems
         displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
