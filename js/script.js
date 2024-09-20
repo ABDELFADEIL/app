@@ -226,5 +226,9 @@ fetch('https://abdelfadeil.github.io/app/data/articles.json')
     })
     .catch(error => console.error('خطأ في جلب الأخبار:', error));
 
-
-
+// تغيير الفيديو في نافذة الفيديوهات
+    function changeVideo(videoID) {
+        const mainVideoIframe = document.getElementById('main-video-iframe');
+        mainVideoIframe.src = `https://www.youtube.com/embed/${videoID}`;
+    }
+    
