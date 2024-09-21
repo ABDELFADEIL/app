@@ -1,3 +1,10 @@
+ :root {
+    --primary-color: #e1dbcb; /* اللون الأساسي */
+    --secondary-color: #5f4b32; /* اللون الداكن */
+    --accent-color: #c98474; /* اللون المميز */
+    --light-color: #f5f1e6; /* اللون الفاتح */
+    --contrast-color: #2a6478; /* اللون الأزرق للتوازن */
+ }
  /* تقسيم الصفحة إلى جذئين */
  .main-container {
     display: flex;
@@ -12,10 +19,17 @@
 .article-details {
     flex: 2;
     margin-right: 20px;
-    background-color: #f0f0f0;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* العنوان الرئيسي للخبر */
+.news-details h1 {
+    color: var(--secondary-color); /* لون داكن للعناوين */
+    font-size: 2.5rem;
+    margin-bottom: 0px;
 }
 
 /* صورة الكاتب */
@@ -30,23 +44,20 @@
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
+    margin-top: 10px;
+    border: 1px solid var(--accent-color);
 }
 
 .author-name {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: 10px;
+    color: var(--accent-color);
 }
 .publish-date {
     text-align: right;
     font-size: 1rem;
-    color: #777;
-    margin-bottom: 20px;
-}
-/* عنوان المقال */
-.article-title {
-    font-size: 1.5rem;
-    color: var(--bg2-color);
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -65,13 +76,13 @@
 .article-content {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--secondary-color);
 }
 
 /* القسم الأيسر (مقالات أخرى) */
 .other-articles-section {
     flex: 1; /* يأخذ 1/3 من العرض */
-    background-color: #f0f0f0;
+    background-color: var(--light-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,7 +96,7 @@
 }
 
 .other-article-item {
-    background-color: #fff;
+    background-color: var(--primary-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -103,11 +114,11 @@
 }
 
 .article-item-content .other-article-title {
-    color: var(--bg2-color);
+    color: var(--contrast-color);
     text-align: right;
 }
 .article-item-content .other-article-author-name {
-    color: #333;
+    color: var(--accent-color);
     text-align: right;
     font-size: 1rem;
 }
@@ -131,12 +142,12 @@
 
 .other-article-date {
     font-size: 1rem;
-    color: #777;
+    color: var(--light-color);
 }
 
 .other-articles {
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: var(--primary-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -148,13 +159,13 @@
 .other-articles h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: var(--bg2-color);
+    color: var(--secondary-color);
 }
 
 .article-item, .other-article-item {
     display: flex;
     gap: 10px;
-    background-color: #fff;
+    background-color: var(--primary-color);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -172,23 +183,12 @@
     flex: 1;
 }
 
-.article-content h3 {
+.article-item-content p {
     font-size: 1rem;
-    margin-bottom: 5px;
-    color: #333;
+    color: var(--accent-color);
 }
 
-.article-content p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.article-content a {
-    color: #0056b3;
-    text-decoration: none;
-}
-
-.article-content a:hover {
+.article-item-content .other-article-title:hover {
     text-decoration: underline;
 }
 

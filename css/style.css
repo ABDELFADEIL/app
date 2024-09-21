@@ -366,14 +366,14 @@ h2.section-title.section-title-article {
 }
 
 .articles-section h2 {
-    color: #5f4b32; /* اللون الداكن للعناوين */
+    color: var(--secondary-color); /* اللون الداكن للعناوين */
     font-size: 1.5rem;
     
 }
 .article-item {
     display: flex;
     gap: 10px;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -385,7 +385,7 @@ h2.section-title.section-title-article {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid #c98474; /* نفس اللون المميز من news-section */
+    border: 1px solid var(--accent-color); /* نفس اللون المميز من news-section */
 }
 
 .article-item-content h3 {
