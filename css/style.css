@@ -533,8 +533,8 @@ h2.section-title.section-title-article {
 /* Info Sections */
 .info-sections {
     /* padding: 30px 80px; */
-    height: 55vh;
-    /* 40% من ارتفاع الشاشة */
+    min-height: 55vh;
+    /* 55%  أقل ارتفاع للشاشة */
 
 }
 
@@ -542,49 +542,62 @@ h2.section-title.section-title-article {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 100%;
+    gap: 20px;
+    padding: 20px;
 
 }
 
 .info-box {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    /* 3 أعمدة في الشاشات الكبيرة */
-    /* margin-bottom: 30px; */
-    background-color: var(--white-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%; /* عرض كامل الحاوية */
+    max-width: 300px; /* أقصى عرض للحاوية */
+    aspect-ratio: 1 / 1; /* مربع بنسبة 3:3 (مربع) */
     overflow: hidden;
-    border-radius: 10px;
-    height: 380px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Text content takes the remaining 50% */
 .info-box-content {
-    height: 60%;
-    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة داكنة */
+    color: white;
     text-align: center;
+    padding: 10px;
+    opacity: 1; /* النص غير مرئي افتراضيًا */
+    transition: opacity 0.3s ease-in-out; /* تأثير عند ظهور النص */
+}
+/* إظهار النص عند التمرير فوق info-box */
+.info-box:hover .info-box-content {
+    opacity: 1; /* إظهار النص عند التمرير */
 }
 
 .info-box img {
     width: 100%;
-    height: 40%;
-    /* height: auto; */
-    /* max-height: 200px; */
-    flex-basis: 40%;
-    object-fit: 40%;
-    border-radius: 10px 10px 0 0;
-    /* الحواف الدائرية للصور في الأعلى فقط */
+    height: 100%;
+    object-fit: cover;
 }
 
-.info-box h2 {
-    font-size: 1.8rem;
-    margin: 10px 0;
+/* تنسيق النص داخل info-box */
+.info-box-content h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
-.info-box p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+.info-box-content p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--white-color);
 }
 
 .btn-secondary {
@@ -698,9 +711,9 @@ h2.section-title.section-title-article {
     }
 
     .info-box {
-        width: 48%;
+        /* width: 48%; */
         /* 2 أعمدة في الشاشات المتوسطة */
-        height: 414px;
+        /* height: 414px; */
     }
 
     .info-box-container {
@@ -827,8 +840,7 @@ h2.section-title.section-title-article {
     }
 
     .info-box {
-        width: 100%;
-        /* عمود واحد في الشاشات الصغيرة */
+        max-width: 100%; /* توسيع المربع ليغطي العرض الكامل للشاشة */
     }
 
     .info-box-container {
