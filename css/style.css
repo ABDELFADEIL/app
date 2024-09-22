@@ -7,16 +7,21 @@
     --bg2-color: #3c6e7b;
     --bg3-color: #d5d8dc;
     --text-color: #333;
-    --white-color: #fff;
     --font-family: 'Arial', sans-serif;
     --container-width: 90%;
     --max-width: 1200px;
 
-    --primary-color: #e1dbcb; /* اللون الأساسي */
-    --secondary-color: #5f4b32; /* اللون الداكن */
-    --accent-color: #c98474; /* اللون المميز */
-    --light-color: #f5f1e6; /* اللون الفاتح */
-    --contrast-color: #2a6478; /* اللون الأزرق للتوازن */
+    --primary-color: #e1dbcb;
+    /* اللون الأساسي */
+    --secondary-color: #5f4b32;
+    /* اللون الداكن */
+    --accent-color: #c98474;
+    /* اللون المميز */
+    --light-color: #f5f1e6;
+    /* اللون الفاتح */
+    --contrast-color: #2a6478;
+    /* اللون الأزرق للتوازن */
+    --white-color: #ffffff;
 }
 
 /* General Styles */
@@ -86,14 +91,18 @@ main {
     min-height: 90px;
     background-color: var(--light-color);
 }
+
 .header h1 {
     color: var(--secondary-color);
     font-size: 3rem;
 }
-.header p, .header a {
+
+.header p,
+.header a {
     color: var(--accent-color);
     font-size: 1.2rem;
 }
+
 .header-container.container {
     padding: initial;
 }
@@ -161,7 +170,8 @@ main {
     display: block;
     width: 100%;
     height: 4px;
-    background-color: var(--accent-color);;
+    background-color: var(--accent-color);
+    ;
     margin: 0;
 }
 
@@ -318,7 +328,8 @@ h2.section-title.section-title-article {
 .news-item-content p {
     margin-bottom: 0;
     font-size: 1rem;
-    color: var(--contrast-color); /* اللون الأزرق للتوازن */
+    color: var(--contrast-color);
+    /* اللون الأزرق للتوازن */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -326,8 +337,10 @@ h2.section-title.section-title-article {
     text-overflow: ellipsis;
 }
 
-.news-item-content p:hover, .news-item-content h3:hover {
-    color: #c98474; /* تغيير اللون عند التمرير لإضافة تفاعل */
+.news-item-content p:hover,
+.news-item-content h3:hover {
+    color: #c98474;
+    /* تغيير اللون عند التمرير لإضافة تفاعل */
 }
 
 .news-carousel-controls {
@@ -354,7 +367,8 @@ h2.section-title.section-title-article {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    background-color: var(--light-color); /* نفس خلفية news-section لتوحيد التصميم */
+    background-color: var(--light-color);
+    /* نفس خلفية news-section لتوحيد التصميم */
     /* لون الخلفية */
     padding: 15px;
     border-radius: 8px;
@@ -366,32 +380,42 @@ h2.section-title.section-title-article {
 }
 
 .articles-section h2 {
-    color: var(--secondary-color); /* اللون الداكن للعناوين */
+    color: var(--secondary-color);
+    /* اللون الداكن للعناوين */
     font-size: 1.5rem;
-    
+
 }
+
 .article-item {
     display: flex;
     gap: 10px;
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     width: 100%;
+    max-height: 80px;
+    min-height: 80px;
 }
 
 .article-item img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid var(--accent-color); /* نفس اللون المميز من news-section */
+    border: 1px solid var(--accent-color);
+    /* نفس اللون المميز من news-section */
+}
+
+.article-item-content {
+    overflow: auto;
 }
 
 .article-item-content h3 {
     margin-bottom: 5px;
     font-size: 1.1rem;
-    color: #5f4b32; /* نفس اللون للعناوين */
+    color: var(--contrast-color);
+    /* نفس اللون للعناوين */
 }
 
 .article-item-content a {
@@ -401,12 +425,14 @@ h2.section-title.section-title-article {
 }
 
 .article-item-content p {
-    color: #5f4b32;
+    color: var(--accent-color);
     font-size: 1rem;
     margin-bottom: 10px;
 }
+
 .article-item-content .article-item-content:hover {
-    color: #c98474; /* تغيير اللون عند التمرير لزيادة التفاعل */
+    color: #c98474;
+    /* تغيير اللون عند التمرير لزيادة التفاعل */
 }
 
 /* نافذة الفيديوهات */
@@ -414,14 +440,21 @@ h2.section-title.section-title-article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* لتمركز المحتوى عمودياً */
-    padding: 40px 20px; /* إضافة تباعد داخلي حول الفيديوهات */
-    background-color: var(--light-color); /* خلفية فاتحة */
-    border-radius: 12px; /* جعل زوايا الحاوية مدورة قليلاً */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف لإبراز الحاوية */
+    justify-content: center;
+    /* لتمركز المحتوى عمودياً */
+    padding: 40px 20px;
+    /* إضافة تباعد داخلي حول الفيديوهات */
+    background-color: var(--light-color);
+    /* خلفية فاتحة */
+    border-radius: 12px;
+    /* جعل زوايا الحاوية مدورة قليلاً */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* إضافة ظل خفيف لإبراز الحاوية */
     width: 100%;
-    max-width: 800px; /* تحديد عرض الحاوية الأقصى */
-    margin: 40px auto; /* محاذاة الحاوية في مركز الصفحة مع مسافة علوية وسفلية */
+    max-width: 800px;
+    /* تحديد عرض الحاوية الأقصى */
+    margin: 40px auto;
+    /* محاذاة الحاوية في مركز الصفحة مع مسافة علوية وسفلية */
     /* text-align: center; */
 }
 
@@ -430,15 +463,19 @@ h2.section-title.section-title-article {
     /* width: -webkit-fill-available; */
     width: 100%;
     max-width: 800px;
-    margin: 0 auto 20px; /* الفيديو في المنتصف */
+    margin: 0 auto 20px;
+    /* الفيديو في المنتصف */
 }
+
 /* الفيديو الديناميكي بنسبة 16:9 */
 .video-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* نسبة 16:9 */
+    padding-top: 56.25%;
+    /* نسبة 16:9 */
     border-radius: 8px;
 }
+
 .main-video iframe {
     position: absolute;
     top: 0;
@@ -446,7 +483,8 @@ h2.section-title.section-title-article {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف للفيديو */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف للفيديو */
 }
 
 /* قائمة الفيديوهات المصغرة */
@@ -454,7 +492,8 @@ h2.section-title.section-title-article {
     display: flex;
     gap: 15px;
     justify-content: center;
-    flex-wrap: wrap; /* السماح بالتفاف الفيديوهات المصغرة إذا لم تتوفر المساحة */
+    flex-wrap: wrap;
+    /* السماح بالتفاف الفيديوهات المصغرة إذا لم تتوفر المساحة */
 }
 
 .thumbnail {
@@ -468,17 +507,22 @@ h2.section-title.section-title-article {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .thumbnail img:hover {
-    transform: scale(1.1); /* تكبير الصور المصغرة عند المرور */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* تكثيف الظل عند المرور */
+    transform: scale(1.1);
+    /* تكبير الصور المصغرة عند المرور */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* تكثيف الظل عند المرور */
 }
+
 .thumbnail:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .video-section h2 {
-    color: #5f4b32; /* اللون الداكن للعناوين */
+    color: #5f4b32;
+    /* اللون الداكن للعناوين */
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -487,14 +531,19 @@ h2.section-title.section-title-article {
 @media (max-width: 768px) {
 
     .video-section {
-        width: 100%; /* تغطية عرض الشاشة بالكامل على الشاشات الصغيرة */
-        padding: 10px; /* إضافة مسافة داخلية لتجنب المظهر المزدحم */
+        width: 100%;
+        /* تغطية عرض الشاشة بالكامل على الشاشات الصغيرة */
+        padding: 10px;
+        /* إضافة مسافة داخلية لتجنب المظهر المزدحم */
     }
+
     .main-video {
         width: 100%;
         height: auto;
-        margin-bottom: 20px; /* زيادة المسافة بين الفيديو الرئيسي والصور المصغرة */
+        margin-bottom: 20px;
+        /* زيادة المسافة بين الفيديو الرئيسي والصور المصغرة */
     }
+
     .main-video iframe {
         width: 100%;
         height: 100%;
@@ -504,7 +553,7 @@ h2.section-title.section-title-article {
         width: 100px;
         height: 70px;
     }
-    
+
 }
 
 
@@ -528,9 +577,12 @@ h2.section-title.section-title-article {
 
 .info-box {
     position: relative;
-    width: 100%; /* عرض كامل الحاوية */
-    max-width: 300px; /* أقصى عرض للحاوية */
-    aspect-ratio: 1 / 1; /* مربع بنسبة 3:3 (مربع) */
+    width: 100%;
+    /* عرض كامل الحاوية */
+    max-width: 300px;
+    /* أقصى عرض للحاوية */
+    aspect-ratio: 1 / 1;
+    /* مربع بنسبة 3:3 (مربع) */
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -552,12 +604,16 @@ h2.section-title.section-title-article {
     color: var(--light-color);
     text-align: center;
     padding: 10px;
-    opacity: 1; /* النص غير مرئي افتراضيًا */
-    transition: opacity 0.3s ease-in-out; /* تأثير عند ظهور النص */
+    opacity: 1;
+    /* النص غير مرئي افتراضيًا */
+    transition: opacity 0.3s ease-in-out;
+    /* تأثير عند ظهور النص */
 }
+
 /* إظهار النص عند التمرير فوق info-box */
 .info-box:hover .info-box-content {
-    opacity: 1; /* إظهار النص عند التمرير */
+    opacity: 1;
+    /* إظهار النص عند التمرير */
 }
 
 .info-box img {
@@ -621,13 +677,15 @@ h2.section-title.section-title-article {
 }
 
 .footer-section h4 {
-    color: var(--light-color); /* لون العناوين */
+    color: var(--light-color);
+    /* لون العناوين */
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
 .footer-column p {
-    color: var(--primary-color); /* لون النصوص الثانوية */
+    color: var(--primary-color);
+    /* لون النصوص الثانوية */
     font-size: 1rem;
 }
 
@@ -648,20 +706,23 @@ h2.section-title.section-title-article {
 }
 
 .footer-section ul li a {
-    color: var(--accent-color); /* لون الروابط */
+    color: var(--accent-color);
+    /* لون الروابط */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-section ul li a:hover {
-    color: var(--contrast-color); /* لون الروابط عند التمرير */
+    color: var(--contrast-color);
+    /* لون الروابط عند التمرير */
 }
 
 .social-icons a {
     margin: 0 10px;
     display: inline-block;
 
-    color: var(--light-color); /* لون الأيقونات الاجتماعية */
+    color: var(--light-color);
+    /* لون الأيقونات الاجتماعية */
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
@@ -798,7 +859,8 @@ h2.section-title.section-title-article {
 
     .news-section {
         flex: 1;
-        background-color: #f5f1e6; /* لون الخلفية المتناغم */
+        background-color: #f5f1e6;
+        /* لون الخلفية المتناغم */
         position: relative;
     }
 
@@ -818,6 +880,7 @@ h2.section-title.section-title-article {
         top: -15px;
         z-index: 1000000;
     }
+
     .news-item-content p {
         font-size: 0.8rem;
         display: -webkit-box;
@@ -837,7 +900,8 @@ h2.section-title.section-title-article {
     }
 
     .info-box {
-        max-width: 100%; /* توسيع المربع ليغطي العرض الكامل للشاشة */
+        max-width: 100%;
+        /* توسيع المربع ليغطي العرض الكامل للشاشة */
     }
 
     .info-box-container {
@@ -888,5 +952,12 @@ h2.section-title.section-title-article {
 
     .header-container.container {
         width: 94%;
+    }
+
+    .article-item-content h3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        
     }
 }

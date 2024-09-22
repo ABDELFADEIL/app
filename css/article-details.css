@@ -116,6 +116,7 @@
 .article-item-content .other-article-title {
     color: var(--contrast-color);
     text-align: right;
+    font-weight: bold;
 }
 .article-item-content .other-article-author-name {
     color: var(--accent-color);
@@ -165,11 +166,13 @@
 .article-item, .other-article-item {
     display: flex;
     gap: 10px;
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    max-height: 80px;
+    min-height: 80px;
 }
 
 .article-thumbnail {
