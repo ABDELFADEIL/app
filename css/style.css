@@ -408,7 +408,7 @@ h2.section-title.section-title-article {
 }
 
 .article-item-content {
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .article-item-content h3 {
