@@ -82,7 +82,7 @@
     text-align: center;
 }
 .other-news-item {
-    background-color: var(--primary-color);
+    background-color: var(--white-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 250px;
