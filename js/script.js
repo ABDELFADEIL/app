@@ -1,4 +1,5 @@
 const host = "https://abdelfadeil.github.io/app/";
+const currentPath = window.location.pathname;
 let data;
 // استدعاء الدالة وتحميل البيانات عند تحميل الصفحة
 window.onload = function () {
@@ -124,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function showLoadedArticles(data) {
     const articles = data.articles;
+    console.log(articles)
     const articlesContainer = document.getElementById('articles-section');
 
     // إنشاء العناصر الخاصة بالمقالات
@@ -146,16 +148,15 @@ function showLoadedArticles(data) {
 
         const articleTitle = document.createElement('h3');
         articleTitle.textContent = article.title;
-
         articleContent.appendChild(articleTitle);
         //
-        if (currentPath.includes('article-details.html')) {
+       // if (currentPath.includes('article-details.html')) {
             // إذا كانت الصفحة هي صفحة تفاصيل المقال
-            const articleLink = document.createElement('a');
-            articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
+            /*const articleLink = document.createElement('a');
+            articleLink.href = `article-details.html?id=${article.id}`;
             articleLink.textContent = "اقرأ المزيد";
-            articleContent.appendChild(articleLink);
-        } else {
+            articleContent.appendChild(articleLink);*/
+        //} else {
             // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
             //articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
             //articleLink.textContent = "اقرأ المزيد";
@@ -163,7 +164,7 @@ function showLoadedArticles(data) {
             articleParagraphe.textContent = article.author.name;
             articleContent.appendChild(articleParagraphe);
             articleItem.classList.add('article-item-home-page');
-        }
+       // }
         //
 
         // تجميع العناصر
