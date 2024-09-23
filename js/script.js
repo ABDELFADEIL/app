@@ -11,9 +11,6 @@ window.onload = function () {
             articles = response.articles;
             data = response;
             news = response.news;
-            console.log(articles);
-            console.log(news);
-            console.log(data);
             showLoadedNews(response);
             showLoadedArticles(response);
         }
@@ -100,6 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //
+    if (window.location.pathname === '/home.html') {
+
+    }
     const newsCarousel = document.getElementById('news-carousel');
     let newsIndex = 0;
 

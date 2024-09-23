@@ -4,7 +4,7 @@ articleId = urlParams.get('id');  // معرف المقال الحالي
 
 
 window.onload = function () {
-    //loadYAMLFile(host + 'data/data.yaml').then(response => {
+    loadYAMLFile(host + 'data/data.yaml').then(response => {
         if (data) {
             //console.log(response); // طباعة البيانات المحملة في وحدة التحكم
             console.log(data)
@@ -12,7 +12,7 @@ window.onload = function () {
             getAndShowsArticleDetails(data);
             getAndShowAnotherArticles(articles);
         }
-   // });
+    });
 }
 
 function getAndShowsArticleDetails(data1) {
