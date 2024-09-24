@@ -173,6 +173,7 @@
     cursor: pointer;
     max-height: 80px;
     min-height: 80px;
+    overflow: hidden;
 }
 
 .article-thumbnail {
