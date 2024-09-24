@@ -1,46 +1,29 @@
-const host = "https://abdelfadeil.github.io/app/";
-const currentPath = window.location.pathname;
-let articles;
-let news;
-let data;
-// استدعاء الدالة وتحميل البيانات عند تحميل الصفحة
-window.onload = function () {
-    loadYAMLFile(host + 'data/data.yaml').then(response => {
-        if (response) {
-            console.log(response); // طباعة البيانات المحملة في وحدة التحكم
-            articles = response.articles;
-            data = response;
-            news = response.news;
-            showLoadedNews(response);
-            showLoadedArticles(response);
-        }
-    });
-};
 
-// دالة لتحميل وتحويل ملف YAML إلى JSON
-async function loadYAMLFile(url ) {
+// دالة تستخدم البيانات بعد تحميلها
+async function useData() {
     try {
-        // استخدام fetch لتحميل ملف YAML
-        const response = await fetch(url);
+        // انتظار تحميل البيانات
+        const { news, articles } = await dataPromise;
 
-        // التحقق من أن الطلب كان ناجحاً
-        if (!response.ok) {
-            throw new Error(`Error fetching the YAML file: ${response.statusText}`);
-        }
+        // الآن يمكنك استخدام البيانات
+        console.log("الأخبار:", news);
+        console.log("المقالات:", articles);
 
-        // قراءة النص من الرد
-        const yamlText = await response.text();
-
-        // تحويل YAML إلى JSON باستخدام js-yaml
-        const jsonData = jsyaml.load(yamlText);
-        console.log(jsonData);
-        data = jsonData;
-        return jsonData; // إرجاع البيانات ككائن JSON
+        // تنفيذ كود إضافي باستخدام البيانات
     } catch (error) {
-        console.error("Failed to load YAML file:", error);
-        return null;
+        console.error("Failed to load data:", error);
     }
 }
+
+// استخدام then و catch للتعامل مع الـ Promise
+useData();
+// استدعاء الدالة وتحميل البيانات عند تحميل الصفحة
+window.onload = function () {
+        if (articles && news) {
+            showLoadedNews(news);
+            showLoadedArticles(articles);
+        }
+};
 
 function navigateToPage(pageUrl) {
     console.log(pageUrl);
@@ -49,83 +32,6 @@ function navigateToPage(pageUrl) {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    document.body.setAttribute('dir', 'rtl');
-    const burger = document.getElementById('burger');
-    const navList = document.getElementById('nav-list');
-    const navLinks = document.querySelectorAll('.nav-list a');
-    const hr = document.getElementById('hr');
-
-    // Toggle menu function
-    const toggleMenu = () => {
-        navList.classList.toggle('show');
-        hr.classList.toggle('show');
-        burger.classList.toggle('active');
-    };
-
-    // Close menu function
-    const closeMenu = () => {
-        navList.classList.remove('show');
-        burger.classList.remove('active');
-        hr.classList.remove('show');
-    };
-
-    // Burger menu click event
-    burger.addEventListener('click', function () {
-        toggleMenu();
-    });
-
-    // Close menu when clicking on nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            closeMenu();
-        });
-    });
-
-
-    // Close menu when clicking outside the menu
-    document.addEventListener('click', function (event) {
-        if (!burger.contains(event.target) && !navList.contains(event.target)) {
-            closeMenu();
-        }
-    });
-
-    // Close menu on window resize
-    window.addEventListener('resize', function () {
-        closeMenu();
-    });
-
-    //
-    if (window.location.pathname === '/home.html') {
-
-    }
-    const newsCarousel = document.getElementById('news-carousel');
-    let newsIndex = 0;
-
-    // الوظيفة لتحديث الكاروسول حسب المؤشر
-    function updateNewsCarousel() {
-        newsCarousel.style.transform = `translateX(${newsIndex * 100}%)`;
-    }
-
-    // الوظيفة للتحرك إلى العنصر التالي
-    function moveToNextNews() {
-        newsIndex = (newsIndex + 1) % newsCarousel.children.length;
-        updateNewsCarousel();
-    }
-
-    // التنقل اليدوي عند الضغط على الأزرار
-    document.getElementById('nextNews').addEventListener('click', moveToNextNews);
-    document.getElementById('prevNews').addEventListener('click', () => {
-        newsIndex = (newsIndex - 1 + newsCarousel.children.length) % newsCarousel.children.length;
-        updateNewsCarousel();
-    });
-
-    // الانتقال التلقائي كل 2 ثانية
-    setInterval(moveToNextNews, 5000);
-    // 
-
-});
 
 // استخدام المعرف لجلب المحتوى المناسب بناءً على معرف المقال
 // يمكنك الآن عرض تفاصيل المقال بناءً على المعرف
@@ -134,13 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function creatArticleHtmlElement(article) {
     const articleItem = document.createElement('article');
     articleItem.classList.add('article-item');
-    console.log(article.id);
     articleItem.setAttribute('data-article-id', article.id);
 
     // إضافة الصورة المصغرة
     const articleThumbnail = document.createElement('img');
     articleThumbnail.src = article.author.image;
-    console.log(article.author.image);
     articleThumbnail.alt = article.title;
     articleThumbnail.classList.add('article-thumbnail');
 
@@ -151,17 +55,7 @@ function creatArticleHtmlElement(article) {
     const articleTitle = document.createElement('h3');
     articleTitle.textContent = article.title;
     articleContent.appendChild(articleTitle);
-    //
-    // if (currentPath.includes('article-details.html')) {
-    // إذا كانت الصفحة هي صفحة تفاصيل المقال
-    /*const articleLink = document.createElement('a');
-    articleLink.href = `article-details.html?id=${article.id}`;
-    articleLink.textContent = "اقرأ المزيد";
-    articleContent.appendChild(articleLink);*/
-    //} else {
-    // إذا كانت الصفحة هي الصفحة الرئيسية أو صفحة أخرى
-    //articleLink.href = `https://abdelfadeil.github.io/app/pages/article-details.html?id=${article.id}`;
-    //articleLink.textContent = "اقرأ المزيد";
+
     const articleAuthorName = document.createElement('p');
     articleAuthorName.textContent = article.author.name;
     articleContent.appendChild(articleAuthorName);
@@ -175,9 +69,7 @@ function creatArticleHtmlElement(article) {
     return articleItem;
 }
 
-function showLoadedArticles(data) {
-    const articles = data.articles;
-    console.log(articles)
+function showLoadedArticles(articles) {
     const articlesContainer = document.getElementById('articles-section');
 
     // إنشاء العناصر الخاصة بالمقالات
@@ -188,13 +80,11 @@ function showLoadedArticles(data) {
         articlesContainer.appendChild(articleItem);
         // الحصول على جميع العناصر التي تحتوي على المقالات
         const articleItems = document.querySelectorAll('.article-item-home-page');
-        console.log(articleItems.length);
         // إضافة مستمع للنقر على كل عنصر article-item
         articleItems.forEach(item => {
             item.addEventListener('click', function () {
                 // استخراج معرف المقال من data-article-id
                 const articleId = item.getAttribute('data-article-id');
-                console.log("articleId", articleId);
                 // نقل الزائر إلى صفحة المقال بناءً على معرف المقال
                 window.location.href = `pages/article-details.html?id=${articleId}`;
             });
@@ -203,8 +93,7 @@ function showLoadedArticles(data) {
 }
 
 
-function showLoadedNews(data) {
-    const news = data.news;
+function showLoadedNews(news) {
     const newsCarousel = document.getElementById('news-carousel');
 
     // إنشاء العناصر الخاصة بالأخبار

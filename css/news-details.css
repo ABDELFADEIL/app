@@ -103,7 +103,8 @@
 
 .other-news-date {
     font-size: 1rem;
-    color: var(--light-color);
+    margin-top: 5px;
+    color: var(--primary-color);
 }
 
 /* أزرار pagination */

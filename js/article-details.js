@@ -3,21 +3,33 @@ urlParams = new URLSearchParams(window.location.search);
 articleId = urlParams.get('id');  // معرف المقال الحالي
 
 
-window.onload = function () {
-    loadYAMLFile(host + 'data/data.yaml').then(response => {
-        if (data) {
-            //console.log(response); // طباعة البيانات المحملة في وحدة التحكم
-            console.log(data)
-            const articles = data.articles;
-            getAndShowsArticleDetails(data);
-            getAndShowAnotherArticles(articles);
-        }
-    });
+// دالة تستخدم البيانات بعد تحميلها
+async function useData() {
+    try {
+        // انتظار تحميل البيانات
+        const { news, articles } = await dataPromise;
+
+        // الآن يمكنك استخدام البيانات
+        console.log("الأخبار:", news);
+        console.log("المقالات:", articles);
+
+        // تنفيذ كود إضافي باستخدام البيانات
+    } catch (error) {
+        console.error("Failed to load data:", error);
+    }
 }
 
-function getAndShowsArticleDetails(data1) {
+// استخدام then و catch للتعامل مع الـ Promise
+useData();
+
+window.onload = function () {
+    getAndShowsArticleDetails(articles);
+    getAndShowAnotherArticles(articles);
+}
+
+function getAndShowsArticleDetails(articles) {
     // البحث عن المقال بناءً على المعرف
-    const currentArticle = data1.articles.find(article => article.id == articleId);
+    const currentArticle = articles.find(article => article.id == articleId);
     console.log(currentArticle);
     if (currentArticle) {
         // عرض تفاصيل المقال الحالي

@@ -3,11 +3,28 @@ urlParams = new URLSearchParams(window.location.search);
 const newsId = urlParams.get('id');
 
 
+// دالة تستخدم البيانات بعد تحميلها
+async function useData() {
+    try {
+        // انتظار تحميل البيانات
+        const { news, articles } = await dataPromise;
+
+        // الآن يمكنك استخدام البيانات
+        console.log("الأخبار:", news);
+        console.log("المقالات:", articles);
+
+        // تنفيذ كود إضافي باستخدام البيانات
+    } catch (error) {
+        console.error("Failed to load data:", error);
+    }
+}
+
+// استخدام then و catch للتعامل مع الـ Promise
+useData();
+
+
 window.onload = function () {
-    loadYAMLFile(host + 'data/data.yaml').then(response => {
-        if (response) {
-            console.log(response); // طباعة البيانات المحملة في وحدة التحكم
-            const news = response.news;
+            console.log(news); // طباعة البيانات المحملة في وحدة التحكم
             // البحث عن الخبر بناءً على المعرف
             const currentNews = news.find(newsItem => newsItem.id == newsId);
 
@@ -53,10 +70,8 @@ window.onload = function () {
                 otherNewsContainer.appendChild(otherNewsDiv);
             });
 
-            newsItems = response.news.filter(newsItem => newsItem.id != newsId); // تخزين الأخبار في المتغير newsItems
+            newsItems = news.filter(newsItem => newsItem.id != newsId); // تخزين الأخبار في المتغير newsItems
             displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
-        }
-    });
 };
 
 
