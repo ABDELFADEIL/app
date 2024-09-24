@@ -418,12 +418,14 @@ h2.section-title.section-title-article {
     color: var(--contrast-color);
     /* نفس اللون للعناوين */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.article-item-content h3:hover {
+    text-decoration: underline;
+}
 .article-item-content a {
     color: #5f4b32;
     font-size: 1rem;
