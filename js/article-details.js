@@ -14,6 +14,8 @@ async function useData() {
         console.log("المقالات:", articles);
 
         // تنفيذ كود إضافي باستخدام البيانات
+        getAndShowsArticleDetails(articles);
+        getAndShowAnotherArticles(articles);
     } catch (error) {
         console.error("Failed to load data:", error);
     }
@@ -23,8 +25,7 @@ async function useData() {
 useData();
 
 window.onload = function () {
-    getAndShowsArticleDetails(articles);
-    getAndShowAnotherArticles(articles);
+
 }
 
 function getAndShowsArticleDetails(articles) {

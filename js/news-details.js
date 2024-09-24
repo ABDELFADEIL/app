@@ -14,6 +14,54 @@ async function useData() {
         console.log("المقالات:", articles);
 
         // تنفيذ كود إضافي باستخدام البيانات
+        console.log(news); // طباعة البيانات المحملة في وحدة التحكم
+        // البحث عن الخبر بناءً على المعرف
+        const currentNews = news.find(newsItem => newsItem.id == newsId);
+
+        if (currentNews) {
+            // عرض تفاصيل الخبر
+            console.log(currentNews)
+            document.getElementById('news-title').textContent = currentNews.headline;
+            document.getElementById('publish-date').textContent = `تاريخ النشر: ${currentNews.date}`;
+            document.getElementById('news-image').src = currentNews.image;
+            document.getElementById('news-content').textContent = currentNews.summary;
+        } else {
+            console.error('خبر غير موجود');
+        }
+
+        // عرض الأخبار الأخرى (التي ليست الخبر الحالي)
+        const otherNewsContainer = document.getElementById('other-news');
+        news.filter(newsItem => newsItem.id != newsId).forEach(otherNews => {
+            const otherNewsDiv = document.createElement('div');
+            otherNewsDiv.classList.add('other-news-item');
+
+            const otherNewsImage = document.createElement('img');
+            otherNewsImage.src = otherNews.image;
+            otherNewsImage.alt = otherNews.headline;
+            otherNewsImage.classList.add('other-news-image');
+
+            const otherNewsTitle = document.createElement('p');
+            otherNewsTitle.classList.add('other-news-title');
+            otherNewsTitle.textContent = otherNews.headline;
+
+            const otherNewsDate = document.createElement('p');
+            otherNewsDate.classList.add('other-news-date');
+            otherNewsDate.textContent = otherNews.date;
+
+            otherNewsDiv.appendChild(otherNewsImage);
+            otherNewsDiv.appendChild(otherNewsTitle);
+            otherNewsDiv.appendChild(otherNewsDate);
+
+            // عند النقر، الانتقال إلى صفحة تفاصيل الخبر
+            otherNewsDiv.addEventListener('click', () => {
+                window.location.href = `news-details.html?id=${otherNews.id}`;
+            });
+
+            otherNewsContainer.appendChild(otherNewsDiv);
+        });
+
+        newsItems = news.filter(newsItem => newsItem.id != newsId); // تخزين الأخبار في المتغير newsItems
+        displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
     } catch (error) {
         console.error("Failed to load data:", error);
     }
@@ -24,54 +72,7 @@ useData();
 
 
 window.onload = function () {
-            console.log(news); // طباعة البيانات المحملة في وحدة التحكم
-            // البحث عن الخبر بناءً على المعرف
-            const currentNews = news.find(newsItem => newsItem.id == newsId);
 
-            if (currentNews) {
-                // عرض تفاصيل الخبر
-                console.log(currentNews)
-                document.getElementById('news-title').textContent = currentNews.headline;
-                document.getElementById('publish-date').textContent = `تاريخ النشر: ${currentNews.date}`;
-                document.getElementById('news-image').src = currentNews.image;
-                document.getElementById('news-content').textContent = currentNews.summary;
-            } else {
-                console.error('خبر غير موجود');
-            }
-
-            // عرض الأخبار الأخرى (التي ليست الخبر الحالي)
-            const otherNewsContainer = document.getElementById('other-news');
-            news.filter(newsItem => newsItem.id != newsId).forEach(otherNews => {
-                const otherNewsDiv = document.createElement('div');
-                otherNewsDiv.classList.add('other-news-item');
-
-                const otherNewsImage = document.createElement('img');
-                otherNewsImage.src = otherNews.image;
-                otherNewsImage.alt = otherNews.headline;
-                otherNewsImage.classList.add('other-news-image');
-
-                const otherNewsTitle = document.createElement('p');
-                otherNewsTitle.classList.add('other-news-title');
-                otherNewsTitle.textContent = otherNews.headline;
-
-                const otherNewsDate = document.createElement('p');
-                otherNewsDate.classList.add('other-news-date');
-                otherNewsDate.textContent = otherNews.date;
-
-                otherNewsDiv.appendChild(otherNewsImage);
-                otherNewsDiv.appendChild(otherNewsTitle);
-                otherNewsDiv.appendChild(otherNewsDate);
-
-                // عند النقر، الانتقال إلى صفحة تفاصيل الخبر
-                otherNewsDiv.addEventListener('click', () => {
-                    window.location.href = `news-details.html?id=${otherNews.id}`;
-                });
-
-                otherNewsContainer.appendChild(otherNewsDiv);
-            });
-
-            newsItems = news.filter(newsItem => newsItem.id != newsId); // تخزين الأخبار في المتغير newsItems
-            displayNewsPage(newsItems, currentPage); // عرض الصفحة الأولى من الأخبار
 };
 
 
