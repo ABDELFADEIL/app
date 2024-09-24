@@ -1,4 +1,3 @@
-
 // دالة تستخدم البيانات بعد تحميلها
 async function useData() {
     try {
