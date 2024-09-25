@@ -411,8 +411,9 @@ h2.section-title.section-title-article {
 .article-item-content {
     /* overflow: auto; */
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .article-item-content h3 {
