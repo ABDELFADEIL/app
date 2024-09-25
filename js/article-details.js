@@ -57,8 +57,8 @@ function getAndShowAnotherArticles(articles) {
             otherArticleImage.alt = otherArticle.title;
             otherArticleImage.classList.add('other-article-image');
 
-            const otherArticleTitle = document.createElement('p');
-            otherArticleTitle.classList.add('other-article-title');
+            const otherArticleTitle = document.createElement('h3');
+            otherArticleTitle.classList.add('other-article-title', 'article-title');
             otherArticleTitle.textContent = otherArticle.title;
 
             const articleDetails = document.createElement('div');
