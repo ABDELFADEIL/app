@@ -315,8 +315,11 @@ h2.section-title.section-title-article {
     background-color: rgba(255, 255, 255, 0.7);
     /* Transparent background */
     color: #fff;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    height: 20%;
+    flex-direction: column;
 }
 
 .news-item-content h3 {
@@ -331,7 +334,7 @@ h2.section-title.section-title-article {
     color: var(--contrast-color);
     /* اللون الأزرق للتوازن */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -391,7 +394,7 @@ h2.section-title.section-title-article {
     align-items: center;
     gap: 10px;
     background-color: var(--white-color);
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -415,7 +418,6 @@ h2.section-title.section-title-article {
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 5px;
 }
 
 .article-item-content h3 {
@@ -860,7 +862,6 @@ h2.section-title.section-title-article {
     }
 
     .logo img {
-        margin-left: 10px;
         max-height: 80px;
         margin: 0;
         padding: 0;
@@ -888,10 +889,12 @@ h2.section-title.section-title-article {
     }
 
     .news-item-content {
-        max-height: 40%;
-        padding: 5px;
+        max-height: 20%;
     }
-
+    .news-item-content h3 {
+        margin-bottom: unset;
+        font-size: 1rem;
+    }
     .news-section h2 {
         font-size: 2rem;
         margin-bottom: 30px;
@@ -903,12 +906,13 @@ h2.section-title.section-title-article {
     .news-item-content p {
         font-size: 0.8rem;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
         /* تحديد عدد السطور */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
         /* إضافة النقاط الثلاث (...) إذا تم القص */
+        display: none;
     }
 
     .info-sections {
@@ -931,7 +935,6 @@ h2.section-title.section-title-article {
     .footer .container {
         flex-direction: column;
         align-items: center;
-        align-items: center;
     }
 
     .footer-section {
@@ -949,20 +952,27 @@ h2.section-title.section-title-article {
 /* Responsive Design for Mobile */
 @media screen and (max-width: 450px) {
     .news-item-content {
-        max-height: 33%;
-        padding: 5px;
+        max-height: 20%;
+        padding: 0 5px;
+        justify-content: center;
     }
 
     .news-item-content h3 {
-        font-size: .7rem;
-        margin: 0px;
-        padding: 2px;
+        font-size: .8rem;
+        margin: unset;
+        padding: unset;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .news-item-content p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         -webkit-line-clamp: 1;
         /* تحديد عدد السطور */
+        display: none;
     }
 
     .container {
@@ -971,5 +981,9 @@ h2.section-title.section-title-article {
 
     .header-container.container {
         width: 94%;
+    }
+
+    .article-item-content h3 {
+        font-size: .8rem;
     }
 }
