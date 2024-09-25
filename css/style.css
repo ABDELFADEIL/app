@@ -410,11 +410,13 @@ h2.section-title.section-title-article {
 
 .article-item-content {
     /* overflow: auto; */
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
 }
 
 .article-item-content h3 {
-    margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--contrast-color);
     /* نفس اللون للعناوين */
     display: -webkit-box;
@@ -429,14 +431,11 @@ h2.section-title.section-title-article {
 .article-item-content a {
     color: #5f4b32;
     font-size: 1rem;
-    margin-bottom: 10px;
 }
 
 .article-item-content p, .other-article-item  p {
     color: var(--accent-color);
     font-size: 1rem;
-    margin-bottom: 5px;
-    margin-top: 5px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
